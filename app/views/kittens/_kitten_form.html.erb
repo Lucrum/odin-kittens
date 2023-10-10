@@ -1,0 +1,24 @@
+<%= form_with model: @kitten do |f| %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %> <br>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :age %>
+  <%= f.number_field :age, min: 1 %>
+  <br>
+
+  <%= f.label :cuteness %>
+  <%= f.number_field :cuteness %>
+  <br>
+
+  <%= f.label :softness %>
+  <%= f.number_field :softness %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>

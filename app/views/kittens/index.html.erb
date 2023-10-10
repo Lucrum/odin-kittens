@@ -1,0 +1,16 @@
+<h1>All Kittens</h1>
+<%= link_to "Create a Kitten!", new_kitten_path %>
+
+<br>
+
+<% if flash[:notice]%>
+  <%= flash[:notice] %>
+  <br>
+<% end %>
+
+<ul>
+  <% @kittens.each do |k| %>
+    <li><%= link_to k.name, k %></li>
+  <% end %>
+</ul>
+

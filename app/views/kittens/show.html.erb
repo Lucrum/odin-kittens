@@ -1,0 +1,32 @@
+<h1><%= @kitten.name %></h1>
+
+<% if flash[:notice]%>
+  <%= flash[:notice] %>
+  <br>
+<% end %>
+
+<div>
+  Age: <%= @kitten.age %>
+</div>
+
+<br>
+
+<div>
+  Cuteness: <%= @kitten.cuteness %>
+</div>
+
+<br>
+
+<div>
+  Softness: <%= @kitten.softness %>
+</div>
+<br>
+
+<%= link_to "Edit Kitten", edit_kitten_path %>
+<br>
+<%= link_to "Delete Kitten", kitten_path(@kitten), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure you want to delete the kitty?"
+    } %>
+<br>
+<%= link_to "Index", kittens_path %>
